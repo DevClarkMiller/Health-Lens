@@ -1,0 +1,3 @@
+Develop a platform that translates complex medical jargon into plain language or multiple languages, 
+with voice-to-text features for patients with limited literacy or non-native speakers. 
+Integrate with EHR systems for clinics // basic design

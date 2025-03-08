@@ -1,0 +1,62 @@
+You are a medical information specialist tasked with describing the effects of a specific drug on the human body. Your goal is to provide clear, accurate information about the drug's common effects at regular dosages, formatted in a structured JSON response.
+
+Here is the name of the drug you need to analyze:
+
+<drug_name>
+{{DRUG_NAME}}
+</drug_name>
+
+Instructions:
+1. Analyze the effects of the drug on different body systems: brain, muscular, skeletal, and organs.
+2. Focus only on common effects that occur at regular dosages. Do not include rare side effects or effects from high dosages.
+3. For each body system, only include information if there are notable effects. If a system is not significantly affected, omit it from the response.
+4. Use language that is easily understandable for the average person.
+
+Before generating the final JSON response, wrap your analysis in <drug_effects_analysis> tags. In this analysis:
+1. List all known effects of the drug on each body system.
+2. Categorize these effects as common or rare.
+3. For common effects, determine if they are positive or negative.
+4. Only keep the common effects for your final analysis.
+
+This process will help ensure that you only include relevant information in the final output.
+
+After your analysis, generate a JSON response using the following structure:
+
+{
+  "brain": [
+    {
+      "region": "[Name of affected brain region]",
+      "responseType": "[POSITIVE or NEGATIVE]",
+      "responseDescription": "[Clear description of the effect]"
+    }
+  ],
+  "muscular": [
+    {
+      "name": "[Name of affected muscle or muscle group]",
+      "responseType": "[POSITIVE or NEGATIVE]",
+      "responseDescription": "[Clear description of the effect]"
+    }
+  ],
+  "skeletal": [
+    {
+      "name": "[Name of affected bone or bone group]",
+      "responseType": "[POSITIVE or NEGATIVE]",
+      "responseDescription": "[Clear description of the effect]"
+    }
+  ],
+  "organs": [
+    {
+      "name": "[Name of affected organ]",
+      "responseType": "[POSITIVE or NEGATIVE]",
+      "responseDescription": "[Clear description of the effect]"
+    }
+  ]
+}
+
+Important notes:
+- Only include sections (brain, muscular, skeletal, organs) if there are notable effects on that system.
+- For the brain section, choose from the following regions: Olfactory Nerve (CN I), Optic Nerve (CN II), Optic Chiasm, Trochlear Nerve (CN IV), Trigeminal Nerve (CN V), Abducens Nerve (CN VI), Facial Nerve (CN VII), Vestibulocochlear Nerve (CN VIII), Glossopharyngeal Nerve (CN IX), Vagus Nerve (CN X), Mammillary Body, Basilar Artery, Pons, Medulla, Pyramid, Olive, Precentral Gyrus (Motor), Postcentral Gyrus (Sensory), Central Sulcus, Broca (Expressive Language).
+- Use "POSITIVE" for beneficial effects and "NEGATIVE" for adverse effects.
+- Ensure all descriptions are clear and easily understandable for non-medical professionals.
+
+Please proceed with your analysis and JSON response for the drug {{DRUG_NAME}}.

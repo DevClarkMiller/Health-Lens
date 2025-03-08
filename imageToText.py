@@ -8,6 +8,10 @@ load_dotenv()
 
 API_KEY = os.environ.get('GEMINI_KEY')
 
+with open("responseFormat.json", "r") as f:
+    responseFormat = f.read()
+
+
 class ImageToFacts:
     def __init__(self):
         self.client = genai.Client(api_key=API_KEY)
@@ -15,7 +19,7 @@ class ImageToFacts:
     def extract_details(self, image: ImageFile):
         response = self.client.models.generate_content(
             model="gemini-2.0-flash",
-            contents=["Please extract the text from this image into json format", image])
+            contents=[f"Please extract the text from this image into the following json format: {responseFormat}", image])
         return response.text
 
 if __name__ == "__main__":

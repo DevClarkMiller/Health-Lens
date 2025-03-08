@@ -1,0 +1,30 @@
+{
+  "brain": [
+    {
+      "region": "POSSIBLE REGIONS: [Olfactory Nerve (CN I), Optic Nerve (CN II), Optic Chiasm, Trochlear Nerve (CN IV), Trigeminal Nerve (CN V), Abducens Nerve (CN VI), Facial Nerve (CN VII), Vestibulocochlear Nerve (CN VIII), Glossopharyngeal Nerve (CN IX), Vagus Nerve (CN X), Mammillary Body, Basilar Artery, Pons, Medulla, Pyramid, Olive, Precentral Gyrus (Motor), Postcentral Gyrus (Sensory), Central Sulcus, Broca (Expressive Language)]",
+      "responseType": "POSITIVE, NEGATIVE: SELECT AN OPTION DEPENDING ON HOW THE DRUG AFFECTS THE PERSON. CURE HEADACHE WOULD BE POSITIVE, CAUSES INTERNAL BLEEDING WOULD BE NEGATIVE.",
+      "responseDescription": "Produces more serotonin, which does something"
+    }
+  ],
+  "muscular": [
+    {
+      "name": "bicep",
+      "responseType": "POSITIVE, NEGATIVE",
+      "responseDescription": "Causes fatigue"
+    }
+  ],
+  "skeletal": [
+    {
+      "name": "Femur",
+      "responseType": "POSITIVE, NEGATIVE",
+      "responseDescription": "Can cause osteoporosis in this region of the skeletal system"
+    }
+  ],
+  "organs": [
+    {
+      "name": "Organ name",
+      "responseType": "POSITIVE, NEGATIVE",
+      "responseDescription": "Causes cramping"
+    }
+  ]
+}

@@ -24,6 +24,8 @@ chart_type = st.sidebar.radio("Chart Type", ["Line", "Histogram", "Scatter"])
 st.subheader("Raw Data")
 st.dataframe(df)
 
+
+
 # Create visualization
 st.subheader(f"{chart_type} Chart for Column {column}")
 if chart_type == "Line":

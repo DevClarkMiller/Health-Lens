@@ -1,30 +1,18 @@
 import PIL.Image
 from PIL.ImageFile import ImageFile
-from google import genai
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-API_KEY = os.environ.get('GEMINI_KEY')
-
-with open("responseFormat.json", "r") as f:
-    responseFormat = f.read()
-
+from client import getFormatting, imagePrompt
 
 class ImageToFacts:
     def __init__(self):
-        self.client = genai.Client(api_key=API_KEY)
+        self.format = getFormatting('label')
 
-    def extract_details(self, image: ImageFile):
-        response = self.client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=[f"Please extract the text from this image into the following json format: {responseFormat}", image])
-        return response.text
+    def extractFacts(self, image: ImageFile):
+        response =  imagePrompt(f"Please extract the text from this image into the following json format: {self.format}", image)
+        return response
 
 if __name__ == "__main__":
     imgToFacts = ImageToFacts()
 
     image = PIL.Image.open('pills.jpg')
-    text = imgToFacts.extract_details(image)
+    text = imgToFacts.extractFacts(image)
     print(text)

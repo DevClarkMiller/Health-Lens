@@ -1,4 +1,0 @@
-Design an app crowdsourcing data on allergen-free restaurants and grocery products. 
-Use geolocation and AI to alert users of hidden allergens in real time, with a peer-support forum for families. A
-bility to question peer support in real time if information not available. AI for allergies info on specified dishes. 
-// map allergen in area, search for craving

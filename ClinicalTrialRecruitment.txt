@@ -1,3 +1,0 @@
-Build a decentralized platform matching patients with clinical trials using anonymized health data. 
-Use smart contracts to ensure transparency and reward participants with tokens for contributions 
-// interesting but hard to get health data, scan prescription?

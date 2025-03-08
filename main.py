@@ -34,3 +34,4 @@ elif chart_type == "Histogram":
     st.pyplot(fig)
 else:
     st.scatter_chart(df[column])
+

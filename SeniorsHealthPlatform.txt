@@ -1,3 +1,0 @@
-Design an app combining cognitive behavioral therapy (CBT) exercises with gamification (e.g., puzzles, storytelling) tailored for elderly users. 
-Use voice recognition and wearable integration to track mood and physical activity, 
-offering personalized interventions // quite decent?

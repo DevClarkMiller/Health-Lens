@@ -182,3 +182,5 @@ pyrightconfig.json
 .idea
 .vscode
 .cursorrules
+
+.DS_Store

@@ -1,4 +1,5 @@
 import PIL.Image
+from PIL import ImageFile
 from client import getFormatting, imagePrompt
 
 class ImageToText:
@@ -9,8 +10,8 @@ class ImageToText:
         else:
             self.prompt = f"Please extract the text from this image into the following json format: {self.format}"
 
-    def process(self, imagePath):
-        image = PIL.Image.open(imagePath)
+    def process(self, image: ImageFile):
+        # image = PIL.Image.open(imagePath)
         response = imagePrompt(self.prompt, image)
         return response
 
@@ -20,15 +21,21 @@ class ImageToFacts(ImageToText):
 
 class ImageToDoctorsNote(ImageToText):
     def __init__(self, prefferredLanguage):
-        context = f"Please simplify this doctors note into something that even a 10 year old could understand, and also translate into this language {prefferredLanguage}. If it's too hard to read and the sentence you piece together isn't complete, just enter null for all fields"
 
-        context += ""
+        context = f"""
+        Here are your instructions for processing a doctors note.
+        1. Translate this document into {prefferredLanguage}
+        2. If the document isn't translatable, just set all fields to null.
+        3. Simplify the note into something even a 10 year old could understand.
+        4. If no prescriptions are present, don't put any elements in the prescribed array.
+        5. If prescriptions are present, add them to the array with the given template
+        """
         super(ImageToDoctorsNote, self).__init__('doctornote', context)
-
 
 if __name__ == "__main__":
     # imgToFacts = ImageToFacts()
     # text = imgToFacts.process('pills.jpg')
+    image = PIL.Image.open('docNote2.jpg')
     imgToDoctorNote = ImageToDoctorsNote("english")
-    text = imgToDoctorNote.process('docNote.webp')
+    text = imgToDoctorNote.process(image)
     print(text)

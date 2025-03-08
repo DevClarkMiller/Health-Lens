@@ -77,7 +77,7 @@ class DrugRegionParser:
     # Rets: The data or None if it wasn't found
     def query(self):
         db = getDB()
-        drugs = db['Drug']
+        drugs = db['Drugs']
         drug = drugs.find_one({"name": self.drugName})
         return drug
 
@@ -85,7 +85,7 @@ class DrugRegionParser:
     # Brief: Adds the drug into mongo
     def addDrug(self, data):
         db = getDB()
-        drugs = db['Drug']
+        drugs = db['Drugs']
         res = drugs.insert_one(data)
         data['_id'] = res.inserted_id
 

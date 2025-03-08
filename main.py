@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+with open('brain.html') as f:
+    brainHtml = f.read()
+
 st.title("Data Visualization App")
 
 # Generate random data
@@ -24,7 +28,10 @@ chart_type = st.sidebar.radio("Chart Type", ["Line", "Histogram", "Scatter"])
 st.subheader("Raw Data")
 st.dataframe(df)
 
-
+# st.html(brainHtml)
+st.subheader("Effect On Brain")
+st.components.v1.html(brainHtml, height=1000)
+# st.html(brainHtml, height=500)
 
 # Create visualization
 st.subheader(f"{chart_type} Chart for Column {column}")

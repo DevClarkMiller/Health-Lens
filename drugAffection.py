@@ -28,5 +28,5 @@ class DrugRegionParser:
 if __name__ == "__main__":
     regionParser = DrugRegionParser("ibuprofen")
     regions = regionParser.promptRegions()
-    # print(regions)
-    print(json.loads(regions))
+    print(regions)
+    # print(json.loads(regions))
